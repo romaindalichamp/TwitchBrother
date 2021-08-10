@@ -1,2 +1,3 @@
-# twitchbrother
-Compare Rainbow Six Siege /  Far Cry and Assassin's Creed Odyssey
+# TwitchBrother
+
+Compare Rainbow Six Siege / Far Cry and Assassin's Creed Odyssey viewers on Twitch through a live line Chart
