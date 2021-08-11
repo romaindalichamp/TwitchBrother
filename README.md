@@ -1,11 +1,19 @@
 # TwitchBrother
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.0.
+A simple Chart to compare Rainbow Six Siege / Far Cry and Assassin's Creed Odyssey streaming datas
 
 ## About
-Sonarcloud report: https://sonarcloud.io/dashboard?id=fukakai_TwitchBrother
+- Sonarcloud report: https://sonarcloud.io/dashboard?id=fukakai_TwitchBrother
 - production URL: {heroku}
 
 ## Run in local
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
-Run `ng lint` to use `@angular-eslint/schematics@12.3.1` on the project
+- Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
+- Run `ng lint` to use `@angular-eslint/schematics@12.3.1` on the project
+
+## Powered By
+- Angular: @schematics/angular 12.2.0
+- Bootstrap: bootstrap@5.1.0
+- JQuery: jquery@3.6.0
+- rxjs 6.6.7
+- typescript 4.3.5
+- SconarCloud: https://sonarcloud.io
+- esLint
