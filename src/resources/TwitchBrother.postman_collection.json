@@ -1,0 +1,232 @@
+{
+	"info": {
+		"_postman_id": "779a69d8-39fa-44f3-a594-c6bb282a0e3a",
+		"name": "TwitchBrother",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Twitch API Access Token",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Client-ID",
+						"value": "khiictvqoqmynqkecbhgsfs47komk6",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://id.twitch.tv/oauth2/token?client_id=khiictvqoqmynqkecbhgsfs47komk6&client_secret=kpjhx7vsq2iseldip0utxgmo9b7gj9&grant_type=client_credentials",
+					"protocol": "https",
+					"host": [
+						"id",
+						"twitch",
+						"tv"
+					],
+					"path": [
+						"oauth2",
+						"token"
+					],
+					"query": [
+						{
+							"key": "client_id",
+							"value": "khiictvqoqmynqkecbhgsfs47komk6"
+						},
+						{
+							"key": "client_secret",
+							"value": "kpjhx7vsq2iseldip0utxgmo9b7gj9"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Rainbow Six Data",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "e627sclrpo5kzevkel0jyfrc03ssfs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Client-ID",
+						"value": "khiictvqoqmynqkecbhgsfs47komk6",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.twitch.tv/helix/games?name=Rainbow Six Siege",
+					"protocol": "https",
+					"host": [
+						"api",
+						"twitch",
+						"tv"
+					],
+					"path": [
+						"helix",
+						"games"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Rainbow Six Siege"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Top Games",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "e627sclrpo5kzevkel0jyfrc03ssfs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Client-ID",
+						"value": "khiictvqoqmynqkecbhgsfs47komk6",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.twitch.tv/helix/streams?game_id=493057",
+					"protocol": "https",
+					"host": [
+						"api",
+						"twitch",
+						"tv"
+					],
+					"path": [
+						"helix",
+						"streams"
+					],
+					"query": [
+						{
+							"key": "game_id",
+							"value": "493057"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Streams for 493057",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "e627sclrpo5kzevkel0jyfrc03ssfs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Client-ID",
+						"value": "khiictvqoqmynqkecbhgsfs47komk6",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.twitch.tv/helix/streams?game_id=493057",
+					"protocol": "https",
+					"host": [
+						"api",
+						"twitch",
+						"tv"
+					],
+					"path": [
+						"helix",
+						"streams"
+					],
+					"query": [
+						{
+							"key": "game_id",
+							"value": "493057"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "More Streams for 493057",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "e627sclrpo5kzevkel0jyfrc03ssfs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Client-ID",
+						"value": "khiictvqoqmynqkecbhgsfs47komk6",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.twitch.tv/helix/streams?after=eyJiIjp7IkN1cnNvciI6ImV5SnpJam94TkRZMkxqVTJOak00TURneU16RTJNeXdpWkNJNlptRnNjMlVzSW5RaU9uUnlkV1Y5In0sImEiOnsiQ3Vyc29yIjoiZXlKeklqbzJPQzR4TVRNNU5ERTRNek15TXpNMU5Td2laQ0k2Wm1Gc2MyVXNJblFpT25SeWRXVjkifX0",
+					"protocol": "https",
+					"host": [
+						"api",
+						"twitch",
+						"tv"
+					],
+					"path": [
+						"helix",
+						"streams"
+					],
+					"query": [
+						{
+							"key": "after",
+							"value": "eyJiIjp7IkN1cnNvciI6ImV5SnpJam94TkRZMkxqVTJOak00TURneU16RTJNeXdpWkNJNlptRnNjMlVzSW5RaU9uUnlkV1Y5In0sImEiOnsiQ3Vyc29yIjoiZXlKeklqbzJPQzR4TVRNNU5ERTRNek15TXpNMU5Td2laQ0k2Wm1Gc2MyVXNJblFpT25SeWRXVjkifX0"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
