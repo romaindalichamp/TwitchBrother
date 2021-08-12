@@ -14,12 +14,7 @@ export class TwitchService {
   constructor(private wsclientService: WsclientService) {
     this.twitchData = <Subject<TwitchPubsubMessageModel>>wsclientService.connect(this.TWITCH_URL).pipe(map(
       (response: MessageEvent): TwitchPubsubMessageModel => {
-        let data = JSON.parse(response.data);
-        console.log(data);
-        return {
-          type: data.type,
-          data: data.data
-        };
+        return <TwitchPubsubMessageModel>JSON.parse(response.data);;
       }
     ));
   }

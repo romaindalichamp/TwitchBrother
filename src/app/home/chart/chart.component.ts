@@ -13,7 +13,7 @@ export class ChartComponent implements OnInit {
   constructor(private twitchService: TwitchService) {
 
     twitchService.twitchData.subscribe(msg => {
-      console.log("Response from websocket: " + msg);
+      console.log("Response from websocket: " + JSON.stringify(msg));
     });
   }
 
