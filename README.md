@@ -16,4 +16,4 @@ A simple Chart to compare Rainbow Six Siege / Far Cry and Assassin's Creed Odyss
 - rxjs 6.6.7
 - typescript 4.3.5
 - SconarCloud: https://sonarcloud.io
-- esLint
+- esLint: eslint/schematics@12.3.1
