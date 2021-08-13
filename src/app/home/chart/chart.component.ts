@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Subscription} from "rxjs";
 import {RxStompService} from '@stomp/ng2-stompjs';
 import {Message} from "@stomp/stompjs";
+import {StreamResponseDataModel} from "../../shared/model/stream-response-data.model";
 
 @Component({
   selector: 'app-chart',
@@ -9,7 +10,7 @@ import {Message} from "@stomp/stompjs";
   styleUrls: ['./chart.component.scss']
 })
 export class ChartComponent implements OnInit {
-  public receivedMessages: string[] = [];
+  public receivedMessages: StreamResponseDataModel;
   private streamsSubscription: Subscription;
 
   constructor(private rxStompService: RxStompService) {
@@ -17,7 +18,8 @@ export class ChartComponent implements OnInit {
 
   ngOnInit() {
     this.streamsSubscription = this.rxStompService.watch('/streams/progress').subscribe((message: Message) => {
-      this.receivedMessages.push(message.body);
+      // this.receivedMessages.push(message.body);
+      this.receivedMessages = <StreamResponseDataModel>JSON.parse(message.body);
     });
   }
 

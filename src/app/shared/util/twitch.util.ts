@@ -1,7 +1,7 @@
-import {TwitchResponseModel} from "../model/twitch-response.model";
+import {StreamResponseModel} from "../model/stream-response.model";
 
 export const TwitchUtil = {
-  websocketReponseToTwitchResponseModel(twitchResponse: string): TwitchResponseModel {
-    return <TwitchResponseModel><any>twitchResponse;
+  websocketReponseToTwitchResponseModel(twitchResponse: string): StreamResponseModel {
+    return <StreamResponseModel><any>twitchResponse;
   }
 }

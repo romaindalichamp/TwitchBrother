@@ -4,6 +4,6 @@
   <button class="btn btn-primary" (click)="onSendMessage()">Send Message</button>
   <h2>Received messages</h2>
   <ol>
-    <li class="message" *ngFor="let message of receivedMessages">{{message}}</li>
+    <li class="message" [value]="receivedMessages.game_id">{{receivedMessages | json}}</li>
   </ol>
 </div>
