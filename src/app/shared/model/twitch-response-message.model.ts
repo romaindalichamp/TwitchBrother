@@ -1,6 +1,6 @@
-import {TwitchSubMessageModel} from "./twitch-sub-message.model";
+import {TwitchResponseSubMessageModel} from "./twitch-response-sub-message.model";
 
-export interface TwitchMessageModel {
+export interface TwitchResponseMessageModel {
   user_name: string;
   display_name: string;
   channel_name: string;
@@ -12,10 +12,10 @@ export interface TwitchMessageModel {
   months: number;
   context: string;
   is_gift: boolean;
-  sub_message: TwitchSubMessageModel;
+  sub_message: TwitchResponseSubMessageModel;
   recipient_id: string;
   recipient_user_name: string;
   recipient_display_name: string;
   multi_month_duration: number;
 }
-export class TwitchMessageModel implements TwitchMessageModel{}
+export class TwitchResponseMessageModel implements TwitchResponseMessageModel{}
