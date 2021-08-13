@@ -1,3 +1,9 @@
 <p>Streaming Chart</p>
-<button (click)="sendMsg()">PING</button> to Twitch WebSocket
-<!--<button (click)="listenTopic()">LISTEN</button> to Twitch WebSocket-->
+<app-status></app-status>
+<div id="messages">
+  <button class="btn btn-primary" (click)="onSendMessage()">Send Message</button>
+  <h2>Received messages</h2>
+  <ol>
+    <li class="message" *ngFor="let message of receivedMessages">{{message}}</li>
+  </ol>
+</div>

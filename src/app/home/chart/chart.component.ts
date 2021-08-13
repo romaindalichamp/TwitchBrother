@@ -1,9 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {TwitchService} from "../../shared/service/twitch.service";
-import {Observable} from "rxjs";
+import {Subscription} from "rxjs";
 import {RxStompService} from '@stomp/ng2-stompjs';
-import {map} from 'rxjs/operators';
-import {RxStompState} from '@stomp/rx-stomp';
+import {Message} from "@stomp/stompjs";
 
 @Component({
   selector: 'app-chart',
@@ -11,33 +9,24 @@ import {RxStompState} from '@stomp/rx-stomp';
   styleUrls: ['./chart.component.scss']
 })
 export class ChartComponent implements OnInit {
-  public connectionStatus$: Observable<string>;
+  public receivedMessages: string[] = [];
+  private streamsSubscription: Subscription;
 
-  constructor(private twitchService: TwitchService, public rxStompService: RxStompService) {
-    twitchService.progress;
-    this.connectionStatus$ = rxStompService.connectionState$.pipe(map((state) => {
-      console.log(state);
-      // convert numeric RxStompState to string
-      return RxStompState[state];
-    }));
+  constructor(private rxStompService: RxStompService) {
   }
 
-  ngOnInit(): void {
-    this.sendMsg();
+  ngOnInit() {
+    this.streamsSubscription = this.rxStompService.watch('/streams/progress').subscribe((message: Message) => {
+      this.receivedMessages.push(message.body);
+    });
   }
 
-  sendMsg() {
-    // this.twitchRequestModel.type = "PING";
-    // // this.twitchService.twitchData.next(this.twitchRequestModel);
+  ngOnDestroy() {
+    this.streamsSubscription.unsubscribe();
   }
 
-
-  // listenTopic() {
-  //   this.twitchRequestModel.type = "LISTEN";
-  //   this.twitchRequestModel.data.topics.push("channel-bits-events-v1.44322889");
-  //   this.twitchRequestModel.data.auth_token = "cfabdegwdoklmawdzdo98xt2fo512y";
-  //   this.twitchRequestModel.nonce = "654684641263451652431653";
-  //   // this.twitchService.twitchData.next(this.twitchRequestModel);
-  // }
-
+  onSendMessage() {
+    const message = `Message generated at ${new Date}`;
+    this.rxStompService.publish({destination: '/streams/progress', body: message});
+  }
 }

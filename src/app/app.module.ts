@@ -8,7 +8,6 @@ import {ChartComponent} from './home/chart/chart.component';
 import {SharedModule} from "./shared/shared.module";
 import {InjectableRxStompConfig, RxStompService, rxStompServiceFactory} from '@stomp/ng2-stompjs';
 import {StatusComponent} from './status/status.component';
-import {MessagesComponent} from './messages/messages.component';
 import {CustomRxStompConfig} from "./custom-rx-stomp.config";
 
 
@@ -18,7 +17,6 @@ import {CustomRxStompConfig} from "./custom-rx-stomp.config";
     HomeComponent,
     ChartComponent,
     StatusComponent,
-    MessagesComponent,
   ],
   imports: [
     BrowserModule,
