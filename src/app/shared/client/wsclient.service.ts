@@ -1,39 +1,70 @@
 import {Injectable} from '@angular/core';
-import {Observable, Observer, Subject} from "rxjs";
+import {Message} from '@stomp/stompjs';
+import {RxStompService} from '@stomp/ng2-stompjs';
+import {Subscription} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class WsclientService {
+  public receivedMessages: string[] = [];
+  private topicSubscription: Subscription;
 
-  constructor() {}
-
-  private subject: Subject<MessageEvent> | undefined;
-
-  public connect(url: string): Subject<MessageEvent> {
-    if (!this.subject) {
-      this.subject = this.create(url);
-      console.log("Successfully connected to: " + url);
-    }
-    return this.subject;
+  constructor(private rxStompService: RxStompService) {
   }
 
-  private create(url: string): Subject<MessageEvent> {
-    let ws = new WebSocket(url);
-
-    let observable = new Observable((obs: Observer<MessageEvent>) => {
-      ws.onmessage = obs.next.bind(obs);
-      ws.onerror = obs.error.bind(obs);
-      ws.onclose = obs.complete.bind(obs);
-      return ws.close.bind(ws);
+  ngOnInit() {
+    console.log("TOPIC SUBSCRIPTION");
+    this.topicSubscription = this.rxStompService.watch('/topic/progress').subscribe((message: Message) => {
+      console.log(message.body)
+      this.receivedMessages.push(message.body);
     });
-    let observer = {
-      next: (data: Object) => {
-        if (ws.readyState === WebSocket.OPEN) {
-          ws.send(JSON.stringify(data));
-        }
-      }
-    };
-    return Subject.create(observer, observable);
   }
+
+  ngOnDestroy() {
+    console.log("TOPIC DESTROY");
+    this.topicSubscription.unsubscribe();
+  }
+
+  onSendMessage() {
+    const message = `Message generated at ${new Date}`;
+    this.rxStompService.publish({destination: '/topic/demo', body: message});
+  }
+
+// connect(url: string): void {
+//   var socket = new SockJS(url);
+//   this.ws = Stomp.over(socket);
+//
+//   let that = this;
+//   this.ws.connect({}, function () {
+//     that.ws.subscribe("/errors", function (message: { body: string; }) {
+//       alert("Error " + message.body);
+//     });
+//     that.ws.subscribe("/topic/reply", function (message: { body: string; }) {
+//       console.log(message)
+//       that.showGreeting(message.body);
+//     });
+//     that.disabled = true;
+//   }, function (error: string) {
+//     alert("STOMP error " + error);
+//   });
+// }
+
+// sendName() {
+//   let data = JSON.stringify({
+//     'name': this.name
+//   })
+//   this.ws.send("/app/message", {}, data);
+// }
+//
+// showGreeting(message: string) {
+//   this.showConversation = true;
+//   this.greetings.push(message)
+// }
+//
+// setConnected(connected: boolean | undefined) {
+//   this.disabled = connected;
+//   this.showConversation = connected;
+//   this.greetings = [];
+// }
 }

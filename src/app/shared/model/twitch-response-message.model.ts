@@ -18,4 +18,6 @@ export interface TwitchResponseMessageModel {
   recipient_display_name: string;
   multi_month_duration: number;
 }
-export class TwitchResponseMessageModel implements TwitchResponseMessageModel{}
+
+export class TwitchResponseMessageModel implements TwitchResponseMessageModel {
+}

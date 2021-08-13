@@ -2,8 +2,8 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 
 import {SharedRoutingModule} from './shared-routing.module';
-import { CustomFooterComponent } from './components/footer/custom-footer.component';
-import { CustomHeaderComponent } from './components/header/custom-header.component';
+import {CustomFooterComponent} from './components/footer/custom-footer.component';
+import {CustomHeaderComponent} from './components/header/custom-header.component';
 
 @NgModule({
   declarations: [
@@ -19,4 +19,5 @@ import { CustomHeaderComponent } from './components/header/custom-header.compone
     SharedRoutingModule
   ]
 })
-export class SharedModule { }
+export class SharedModule {
+}

@@ -4,4 +4,6 @@ export interface TwitchResponseModel {
   type: string;
   data: TwitchResponseDataModel;
 }
-export class TwitchResponseModel implements TwitchResponseModel{}
+
+export class TwitchResponseModel implements TwitchResponseModel {
+}

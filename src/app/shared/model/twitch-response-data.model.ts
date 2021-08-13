@@ -4,4 +4,6 @@ export interface TwitchResponseDataModel {
   topic: string;
   message: TwitchResponseMessageModel;
 }
-export class TwitchResponseDataModel implements TwitchResponseDataModel{}
+
+export class TwitchResponseDataModel implements TwitchResponseDataModel {
+}

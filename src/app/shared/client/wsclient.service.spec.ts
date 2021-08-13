@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { WsclientService } from './wsclient.service';
+import {WsclientService} from './wsclient.service';
 
 describe('WsclientService', () => {
   let service: WsclientService;
