@@ -1,7 +1,7 @@
 import {StreamResponseDataModel} from "./stream-response-data.model";
 
 export interface StreamResponseModel {
-  gameList: string;
+  gameList: string[];
   totalViewers: number;
   data: StreamResponseDataModel[];
 }
