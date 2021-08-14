@@ -1,4 +1,15 @@
 <app-custom-header></app-custom-header>
-<h1>Welcome Home !</h1>
-<app-chart></app-chart>
+<div class="container">
+  <h1 class="mt-4">Welcome, TwitchBrother is watching them !</h1>
+  <app-statistics
+    [groupedStreams]="groupedStreams"
+    [receivedStreams$]="receivedStreams$"
+    [gamesGeneralInfos]="gamesGeneralInfos">
+  </app-statistics>
+  <app-chart
+    [groupedStreams]="groupedStreams"
+    [receivedStreams$]="receivedStreams$"
+    [gamesGeneralInfos]="gamesGeneralInfos">
+  </app-chart>
+</div>
 <app-custom-footer></app-custom-footer>

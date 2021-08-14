@@ -23,6 +23,8 @@ A simple Chart to compare Rainbow Six Siege / Far Cry and Assassin's Creed Odyss
 - esLint: eslint/schematics@12.3.1
 - Stomp: @stomp/ng2-stompjs@8.0.0
 - SockJs: sockjs-client@1.5.1
+- apexcharts@3.27.3
+- bootstrap: bootstrap@5.1.0
 
 ## cmds
 

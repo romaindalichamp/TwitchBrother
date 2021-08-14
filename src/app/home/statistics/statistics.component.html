@@ -1,0 +1,11 @@
+<p class="h2 mt-5">Total Viewers for the games: <span class="h1">{{receivedStreams$.getValue().totalViewers}}</span></p>
+<ul><li class="h6" *ngFor="let gameName of receivedStreams$.getValue().gameList">{{gameName}}</li></ul>
+<h4 class="mt-5">Views for Each Game: </h4>
+<div class="container">
+  <div class="row">
+    <div class="col-sm col-example text-center bg-light m-1" *ngFor="let gameModel of gamesGeneralInfos">
+      {{gameModel.game_name}} - <strong>{{gameModel.viewers}}</strong>
+    </div>
+  </div>
+</div>
+<p></p>

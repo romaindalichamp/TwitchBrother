@@ -6,5 +6,5 @@ export interface StreamResponseModel {
   data: StreamResponseDataModel[];
 }
 
-export class StreamReponseModel implements StreamReponseModel {
+export class StreamResponseModel implements StreamResponseModel {
 }

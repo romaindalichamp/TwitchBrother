@@ -1,20 +1,20 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import {ChartComponent} from './chart.component';
+import {CustomChartComponent} from './custom-chart.component';
 
 describe('MessagesComponent', () => {
-  let component: ChartComponent;
-  let fixture: ComponentFixture<ChartComponent>;
+  let component: CustomChartComponent;
+  let fixture: ComponentFixture<CustomChartComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ChartComponent]
+      declarations: [CustomChartComponent]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ChartComponent);
+    fixture = TestBed.createComponent(CustomChartComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
