@@ -1,8 +1,9 @@
 import {InjectableRxStompConfig} from '@stomp/ng2-stompjs';
+import {environment} from "../environments/environment";
 
 export const CustomRxStompConfig: InjectableRxStompConfig = {
   // Which server?
-  brokerURL: 'ws://localhost:8080/ws',
+  brokerURL: environment.wsTwitchBrotherBack,
 
   // Headers
   // Typical keys: login, passcode, host
@@ -26,5 +27,6 @@ export const CustomRxStompConfig: InjectableRxStompConfig = {
   // Skip this key to stop logging to console
   debug: (msg: string): void => {
     console.log(new Date(), msg);
+    console.log(environment.wsTwitchBrotherBack);
   }
 };
