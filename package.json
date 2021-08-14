@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "heroku-postbuild": "ng build --configuration=production",
-    "watch": "ng build --watch --configuration production",
+    "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "lint.js"
   },

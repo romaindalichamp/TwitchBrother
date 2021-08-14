@@ -9,8 +9,7 @@ A simple Chart to compare Rainbow Six Siege / Far Cry and Assassin's Creed Odyss
 
 ## Run in local
 
-- Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
-- Run `ng lint` to use `@angular-eslint/schematics@12.3.1` on the project
+- Run `ng serve --configuration development` for a dev server. Navigate to `http://localhost:4200/`.
 
 ## Powered By
 
