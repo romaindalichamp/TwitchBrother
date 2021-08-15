@@ -9,6 +9,9 @@ A simple Chart to compare Rainbow Six Siege / Far Cry and Assassin's Creed Odyss
 
 ## Run in local
 
+- make sure npm is installed: `https://docs.npmjs.com/getting-started/`
+- install python with `npm install --global windows-build-tools` from an administrative powershell
+- run `npm install`
 - Run `ng serve --configuration development` for a dev server. Navigate to `http://localhost:4200/`.
 
 ## Powered By
