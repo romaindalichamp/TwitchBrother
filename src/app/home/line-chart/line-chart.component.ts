@@ -61,7 +61,8 @@ export class LineChartComponent implements OnInit {
       });
       this._counter++;
       console.log(this.chartData);
-    };
+    }
+    ;
   }
 
   ngOnDestroy() {

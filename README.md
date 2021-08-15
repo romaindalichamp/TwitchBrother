@@ -1,10 +1,11 @@
 # TwitchBrother
 
-A page to compare Rainbow Six Siege / Far Cry and Assassin's Creed Odyssey streaming 
+A page to compare Rainbow Six Siege / Far Cry and Assassin's Creed Odyssey streaming
 
 The number of viewers are updating more or less every 2 seconds.
 
-* You need first to download and install the backend application (Java Spring Boot) before to run this one. 
+* You need first to download and install the backend application (Java Spring Boot) before to run
+  this one.
 * Follow the link: https://github.com/fukakai/TwitchBrotherBack
 
 ## About
@@ -16,7 +17,8 @@ The number of viewers are updating more or less every 2 seconds.
 [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=fukakai_TwitchBrother&metric=duplicated_lines_density)](https://sonarcloud.io/dashboard?id=fukakai_TwitchBrother)
 
 - Production URL: https://twitch-brother.herokuapp.com/
-  - not functional yet, the application is fully deployed but heroku is blocking it because of a memory leak - it seems it is due to the websocket
+  - not functional yet, the application is fully deployed but heroku is blocking it because of a
+    memory leak - it seems it is due to the websocket
 
 ## Run in local
 
@@ -26,7 +28,7 @@ The number of viewers are updating more or less every 2 seconds.
   - clone the repository and navigate inside
   - run `npm install`
   - run `npm install -g @angular/cli`
-- Run `ng serve` or `ng serve --configuration development` in local. 
+- Run `ng serve` or `ng serve --configuration development` in local.
 - Navigate to `http://localhost:4200/`.
 
 ## Powered By

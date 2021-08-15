@@ -11,7 +11,7 @@ import {CustomRxStompConfig} from "./custom-rx-stomp.config";
 import {StatisticsComponent} from './home/statistics/statistics.component';
 import {NgxChartsModule} from "@swimlane/ngx-charts";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import { LineChartComponent } from './home/line-chart/line-chart.component';
+import {LineChartComponent} from './home/line-chart/line-chart.component';
 
 
 @NgModule({
