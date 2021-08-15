@@ -8,7 +8,7 @@ import {CustomChartComponent} from './home/chart/custom-chart.component';
 import {SharedModule} from "./shared/shared.module";
 import {InjectableRxStompConfig, RxStompService, rxStompServiceFactory} from '@stomp/ng2-stompjs';
 import {StatusComponent} from './status/status.component';
-// import {CustomRxStompConfig} from "./custom-rx-stomp.config";
+import {CustomRxStompConfig} from "./custom-rx-stomp.config";
 import {NgApexchartsModule} from "ng-apexcharts";
 import { StatisticsComponent } from './home/statistics/statistics.component';
 
@@ -31,7 +31,7 @@ import { StatisticsComponent } from './home/statistics/statistics.component';
 
     {
       provide: InjectableRxStompConfig,
-      // useValue: CustomRxStompConfig
+      useValue: CustomRxStompConfig
     },
     {
       provide: RxStompService,
