@@ -5,7 +5,7 @@ import {TwitchUtil} from "../shared/util/twitch.util";
 import {StreamResponseDataModel} from "../shared/model/stream-response-data.model";
 import {GameListModel} from "../shared/model/game-list.model";
 import {BehaviorSubject, Subscription} from "rxjs";
-// import {RxStompService} from "@stomp/ng2-stompjs";
+import {RxStompService} from "@stomp/ng2-stompjs";
 import {GameModel} from "../shared/model/game.model";
 
 @Component({
@@ -19,8 +19,8 @@ export class HomeComponent implements OnInit {
   groupedStreams: GameListModel[] = [];
   gamesGeneralInfos: GameModel[] = [];
 
-  // constructor(private rxStompService: RxStompService) {
-  // }
+  constructor(private rxStompService: RxStompService) {
+  }
 
   ngOnInit(): void {
     // this._streamsSubscription = this.rxStompService.watch('/streams/progress').subscribe((message: Message) => {

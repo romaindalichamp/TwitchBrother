@@ -6,8 +6,8 @@ import {AppComponent} from './app.component';
 import {HomeComponent} from './home/home.component';
 import {CustomChartComponent} from './home/chart/custom-chart.component';
 import {SharedModule} from "./shared/shared.module";
-// import {InjectableRxStompConfig, RxStompService, rxStompServiceFactory} from '@stomp/ng2-stompjs';
-// import {StatusComponent} from './status/status.component';
+import {InjectableRxStompConfig, RxStompService, rxStompServiceFactory} from '@stomp/ng2-stompjs';
+import {StatusComponent} from './status/status.component';
 // import {CustomRxStompConfig} from "./custom-rx-stomp.config";
 import {NgApexchartsModule} from "ng-apexcharts";
 import { StatisticsComponent } from './home/statistics/statistics.component';
@@ -18,7 +18,7 @@ import { StatisticsComponent } from './home/statistics/statistics.component';
     AppComponent,
     HomeComponent,
     CustomChartComponent,
-    // StatusComponent,
+    StatusComponent,
     StatisticsComponent,
   ],
   imports: [
@@ -27,18 +27,18 @@ import { StatisticsComponent } from './home/statistics/statistics.component';
     SharedModule,
     NgApexchartsModule,
   ],
-  // providers: [
-  //
-  //   {
-  //     provide: InjectableRxStompConfig,
-  //     // useValue: CustomRxStompConfig
-  //   },
-  //   {
-  //     provide: RxStompService,
-  //     useFactory: rxStompServiceFactory,
-  //     deps: [InjectableRxStompConfig]
-  //   }
-  // ],
+  providers: [
+
+    {
+      provide: InjectableRxStompConfig,
+      // useValue: CustomRxStompConfig
+    },
+    {
+      provide: RxStompService,
+      useFactory: rxStompServiceFactory,
+      deps: [InjectableRxStompConfig]
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
