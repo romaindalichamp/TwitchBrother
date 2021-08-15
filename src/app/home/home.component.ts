@@ -23,16 +23,16 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this._streamsSubscription = this.rxStompService.watch('/streams/progress').subscribe((message: Message) => {
-      this.receivedStreams$.next(<StreamResponseModel>JSON.parse(message.body));
-      this.groupedStreams = TwitchUtil.groupByProperty(this.receivedStreams$.getValue().data, (game: StreamResponseDataModel) => game.game_id);
-
-      this.fillGameGeneralInfos();
-    });
+    // this._streamsSubscription = this.rxStompService.watch('/streams/progress').subscribe((message: Message) => {
+    //   this.receivedStreams$.next(<StreamResponseModel>JSON.parse(message.body));
+    //   this.groupedStreams = TwitchUtil.groupByProperty(this.receivedStreams$.getValue().data, (game: StreamResponseDataModel) => game.game_id);
+    //
+    //   this.fillGameGeneralInfos();
+    // });
   }
 
   ngOnDestroy() {
-    this._streamsSubscription.unsubscribe();
+    // this._streamsSubscription.unsubscribe();
   }
 
 
