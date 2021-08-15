@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  wsTwitchBrotherBack: 'ws://localhost:8080/proddddd'
+  wsTwitchBrotherBack: 'ws://twitch-brother-back.herokuapp.com//ws'
 };
