@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
       this.receivedStreams$.next(<StreamResponseModel>JSON.parse(message.body));
       this.groupedStreams = TwitchUtil.groupByProperty(this.receivedStreams$.getValue().data, (game: StreamResponseDataModel) => game.game_id);
 
-      this.fillGameGeneralInfos();
+      this.mapStreamsToGeneralInfos();
     });
   }
 
@@ -35,8 +35,11 @@ export class HomeComponent implements OnInit {
     this._streamsSubscription.unsubscribe();
   }
 
-
-  private fillGameGeneralInfos() {
+  /**
+   * Map Streams Data to General Informations, this is more convenient tu use with charts
+   * @private
+   */
+  private mapStreamsToGeneralInfos() {
     this.gamesGeneralInfos = [];
     this.groupedStreams.forEach((gameListModel: any) => {
 
@@ -56,10 +59,4 @@ export class HomeComponent implements OnInit {
       });
     });
   }
-
-  //
-  // onSendMessage() {
-  //   const message = `Message generated at ${new Date}`;
-  //   this.rxStompService.publish({destination: '/streams/progress', body: message});
-  // }
 }
