@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-// import {Message} from "@stomp/stompjs";
+import {Message} from "@stomp/stompjs";
 import {StreamResponseModel} from "../shared/model/stream-response.model";
 import {TwitchUtil} from "../shared/util/twitch.util";
 import {StreamResponseDataModel} from "../shared/model/stream-response-data.model";
