@@ -7,7 +7,6 @@ import {HomeComponent} from './home/home.component';
 import {BarChartComponent} from './home/bar-chart/bar-chart.component';
 import {SharedModule} from "./shared/shared.module";
 import {InjectableRxStompConfig, RxStompService, rxStompServiceFactory} from '@stomp/ng2-stompjs';
-import {StatusComponent} from './status/status.component';
 import {CustomRxStompConfig} from "./custom-rx-stomp.config";
 import {StatisticsComponent} from './home/statistics/statistics.component';
 import {NgxChartsModule} from "@swimlane/ngx-charts";
@@ -20,7 +19,6 @@ import { LineChartComponent } from './home/line-chart/line-chart.component';
     AppComponent,
     HomeComponent,
     BarChartComponent,
-    StatusComponent,
     StatisticsComponent,
     LineChartComponent,
   ],
