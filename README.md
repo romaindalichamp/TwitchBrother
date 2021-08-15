@@ -1,19 +1,32 @@
 # TwitchBrother
 
-A simple Chart to compare Rainbow Six Siege / Far Cry and Assassin's Creed Odyssey streaming datas
+A page to compare Rainbow Six Siege / Far Cry and Assassin's Creed Odyssey streaming 
+
+The number of viewers are updating more or less every 2 seconds.
+
+* You need first to download and install the backend application (Java Spring Boot) before to run this one. 
+* Follow the link: https://github.com/fukakai/TwitchBrotherBack
 
 ## About
 
-- Sonarcloud report: https://sonarcloud.io/dashboard?id=fukakai_TwitchBrother
-- production URL: {heroku}
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=fukakai_TwitchBrother&metric=alert_status)](https://sonarcloud.io/dashboard?id=fukakai_TwitchBrother)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=fukakai_TwitchBrother&metric=coverage)](https://sonarcloud.io/dashboard?id=fukakai_TwitchBrother)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=fukakai_TwitchBrother&metric=security_rating)](https://sonarcloud.io/dashboard?id=fukakai_TwitchBrother)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=fukakai_TwitchBrother&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=fukakai_TwitchBrother)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=fukakai_TwitchBrother&metric=duplicated_lines_density)](https://sonarcloud.io/dashboard?id=fukakai_TwitchBrother)
+
+- production URL: https://twitch-brother.herokuapp.com/
 
 ## Run in local
 
-- open an administrative powershell
+- Open an administrative powershell
   - make sure npm is installed: `https://docs.npmjs.com/getting-started/`
   - install python with `npm install --global windows-build-tools` from an administrative powershell
+  - clone the repository and navigate inside
   - run `npm install`
-- Run `ng serve --configuration development` for a dev server. Navigate to `http://localhost:4200/`.
+  - run `npm install -g @angular/cli`
+- Run `ng serve --configuration development` for a dev server. 
+- Navigate to `http://localhost:4200/`.
 
 ## Powered By
 
@@ -28,9 +41,3 @@ A simple Chart to compare Rainbow Six Siege / Far Cry and Assassin's Creed Odyss
 - SockJs: sockjs-client@1.5.1
 - apexcharts@3.27.3
 - bootstrap: bootstrap@5.1.0
-
-## cmds
-
-- npm install --save sockjs-client
-- npm install --save @types/sockjs-client
-- npm audit fix
