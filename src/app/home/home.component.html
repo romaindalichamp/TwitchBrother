@@ -1,22 +1,20 @@
 <app-custom-header></app-custom-header>
-<div class="container">
-  <div class="row">
-    <h1 class="mt-4">Welcome, TwitchBrother is watching them !</h1>
-    <app-statistics
-      [groupedStreams]="groupedStreams"
-      [receivedStreams$]="receivedStreams$"
-      [gamesGeneralInfos]="gamesGeneralInfos">
-    </app-statistics>
-    <bar-chart
-      [groupedStreams]="groupedStreams"
-      [receivedStreams$]="receivedStreams$"
-      [gamesGeneralInfos]="gamesGeneralInfos">
-    </bar-chart>
-    <!--  <line-chart-->
-    <!--    [groupedStreams]="groupedStreams"-->
-    <!--    [receivedStreams$]="receivedStreams$"-->
-    <!--    [gamesGeneralInfos]="gamesGeneralInfos">-->
-    <!--  </line-chart>-->
+<content class="wrapper flex-grow-1">
+  <div class="container">
+    <div class="row">
+      <h1 class="mt-4">Welcome, TwitchBrother is watching them !</h1>
+      <app-statistics
+        [groupedStreams]="groupedStreams"
+        [receivedStreams$]="receivedStreams$"
+        [gamesGeneralInfos]="gamesGeneralInfos"
+        (saveCurrentDatasEmitter)="this.saveCurrentDatas()">
+      </app-statistics>
+      <bar-chart
+        [groupedStreams]="groupedStreams"
+        [receivedStreams$]="receivedStreams$"
+        [gamesGeneralInfos]="gamesGeneralInfos">
+      </bar-chart>
+    </div>
   </div>
-</div>
+</content>
 <app-custom-footer></app-custom-footer>

@@ -3,10 +3,19 @@
 <ul>
   <li class="h6" *ngFor="let gameName of receivedStreams$.getValue().gameList">{{gameName}}</li>
 </ul>
-<h4 class="mt-5">Views for each game: </h4>
+<div class="container">
+  <div class="row mb-4">
+    <div class="col-md-auto text-left">
+      <h4 class="mt-4">Views for each game: </h4>
+    </div>
+    <div class="mt-auto col-sm text-left align-text-bottom">
+      <button class="float-sm-start btn btn-dark" type="button" value="save" (click)="saveCurrentDatas()">Save</button>
+    </div>
+  </div>
+</div>
 <div class="container">
   <div class="row">
-    <div class="col-sm col-example text-center bg-light m-1"
+    <div class="col-sm text-center bg-light m-1"
          *ngFor="let gameModel of gamesGeneralInfos">
       {{gameModel.game_name}} - <strong>{{gameModel.viewers}}</strong>
     </div>

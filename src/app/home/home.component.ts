@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Message} from "@stomp/stompjs";
 import {StreamResponseModel} from "../shared/model/stream-response.model";
 import {TwitchUtil} from "../shared/util/twitch.util";
@@ -7,11 +7,13 @@ import {GameListModel} from "../shared/model/game-list.model";
 import {BehaviorSubject, Subscription} from "rxjs";
 import {RxStompService} from "@stomp/ng2-stompjs";
 import {GameModel} from "../shared/model/game.model";
+import {HomeService} from "./home.service";
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
+  providers: [HomeService]
 })
 export class HomeComponent implements OnInit {
   private _streamsSubscription: Subscription | undefined;
@@ -19,7 +21,7 @@ export class HomeComponent implements OnInit {
   groupedStreams: GameListModel[] = [];
   gamesGeneralInfos: GameModel[] = [];
 
-  constructor(private rxStompService: RxStompService) {
+  constructor(private rxStompService: RxStompService, private homeService: HomeService) {
   }
 
   ngOnInit(): void {
@@ -58,5 +60,9 @@ export class HomeComponent implements OnInit {
         viewers: totalViewersForThisGame
       });
     });
+  }
+
+  public saveCurrentDatas(): void {
+      this.homeService.saveGeneralInformations(this.gamesGeneralInfos);
   }
 }

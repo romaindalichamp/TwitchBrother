@@ -2,7 +2,7 @@
 
 A page to compare Rainbow Six Siege / Far Cry and Assassin's Creed Odyssey streaming
 
-The number of viewers are updating more or less every 2 seconds.
+The number of viewers are updating more or less every 2-4 seconds.
 
 * You need first to download and install the backend application (Java Spring Boot) before to run
   this one.

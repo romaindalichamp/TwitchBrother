@@ -12,6 +12,8 @@ import {StatisticsComponent} from './home/statistics/statistics.component';
 import {NgxChartsModule} from "@swimlane/ngx-charts";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {LineChartComponent} from './home/line-chart/line-chart.component';
+import {HomeService} from "./home/home.service";
+import {HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -27,10 +29,14 @@ import {LineChartComponent} from './home/line-chart/line-chart.component';
     AppRoutingModule,
     SharedModule,
     NgxChartsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [
-
+    {
+      provide: HomeService,
+      useValue: HomeService
+    },
     {
       provide: InjectableRxStompConfig,
       useValue: CustomRxStompConfig

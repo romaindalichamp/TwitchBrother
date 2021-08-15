@@ -1,1 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+app-home {
+  flex-direction: column!important;
+  display: flex !important;
+  min-height: 100vh!important;
+}

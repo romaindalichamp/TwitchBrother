@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  wsTwitchBrotherBack: 'ws://localhost:8080/ws'
+  wsTwitchBrotherBack: 'ws://localhost:8080/ws',
+  twitchBrotherDataSnapshot: 'http://localhost:8080/datasnapshot'
 };
 
 /*
