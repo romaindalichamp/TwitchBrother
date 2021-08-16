@@ -31,16 +31,15 @@ The number of viewers are updating more or less every 2-4 seconds.
 - Run `ng serve` or `ng serve --configuration development` in local.
 - Navigate to `http://localhost:4200/`.
 
-## Powered By
 
-- Angular: @schematics/angular 12.2.0
-- Bootstrap: bootstrap@5.1.0
-- JQuery: jquery@3.6.0
-- rxjs 6.6.7
-- typescript 4.3.5
-- SconarCloud: https://sonarcloud.io
-- esLint: eslint/schematics@12.3.1
-- Stomp: @stomp/ng2-stompjs@8.0.0
-- SockJs: sockjs-client@1.5.1
-- apexcharts@3.27.3
-- bootstrap: bootstrap@5.1.0
+## Frontend
+
+This application is working only with the server (see the server section)
+
+![img_1.png](img_1.png)
+
+## Server
+
+You can download and install the server here: https://github.com/fukakai/TwitchBrotherBack
+
+![img.png](img.png)
