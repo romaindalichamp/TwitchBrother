@@ -20,15 +20,25 @@ The number of viewers are updating more or less every 2-4 seconds.
   - not functional yet, the application is fully deployed but heroku is blocking it because of a
     memory leak - it seems it is due to the websocket
 
-## Run in local
+## Pre-Installation
 
+Node JS
+- download Node.Js https://nodejs.org/en/download/ (version 14.15 ou supérieure)
+
+Python 27
 - Open an administrative powershell
+
+Npm
   - make sure npm is installed: `https://docs.npmjs.com/getting-started/`
-  - install python with `npm install --global windows-build-tools` from an administrative powershell
-  - clone the repository and navigate inside
-  - run `npm install`
-  - run `npm install -g @angular/cli`
-- Run `ng serve` or `ng serve --configuration development` in local.
+
+Windows Build Tools may be required
+  - for windows install python with `npm install --global windows-build-tools` from an administrative powershell
+
+## Deploy
+- Clone the repository
+- run `npm install -g @angular/cli`
+- run `npm install`
+- `ng serve --configuration development` in local.
 - Navigate to `http://localhost:4200/`.
 
 
