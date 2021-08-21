@@ -1,5 +1,7 @@
 # TwitchBrother
 
+Production URL: https://twitch-brother-lhv7smkqs-fukakai.vercel.app
+
 A page to compare Rainbow Six Siege / Far Cry and Assassin's Creed Odyssey streaming
 
 The number of viewers are updating more or less every 2-4 seconds.
