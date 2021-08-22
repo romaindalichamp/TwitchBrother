@@ -18,10 +18,6 @@ The number of viewers are updating more or less every 2-4 seconds.
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=fukakai_TwitchBrother&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=fukakai_TwitchBrother)
 [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=fukakai_TwitchBrother&metric=duplicated_lines_density)](https://sonarcloud.io/dashboard?id=fukakai_TwitchBrother)
 
-- Production URL: https://twitch-brother.herokuapp.com/
-  - not functional yet, the application is fully deployed but heroku is blocking it because of a
-    memory leak - it seems it is due to the websocket
-
 ## Pre-Installation
 
 Node JS
