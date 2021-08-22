@@ -19,7 +19,8 @@ export class HomeComponent implements OnInit {
   private _streamsSubscription: Subscription | undefined;
   receivedStreams$: BehaviorSubject<StreamResponseModel> = new BehaviorSubject<StreamResponseModel>(new StreamResponseModel());
   groupedStreams: GameListModel[] = [];
-  gamesGeneralInfos: GameModel[] = [];
+  gamesGeneralInfos: GameModel[] = []
+  savedData: GameModel[] = [];
 
   constructor(private rxStompService: RxStompService, private homeService: HomeService) {
   }
@@ -63,6 +64,8 @@ export class HomeComponent implements OnInit {
   }
 
   public saveCurrentDatas(): void {
-      this.homeService.saveGeneralInformations(this.gamesGeneralInfos);
+    this.homeService.saveGeneralInformations(this.gamesGeneralInfos).then((result) => {
+      this.savedData = <GameModel[]>result;
+    });
   }
 }
