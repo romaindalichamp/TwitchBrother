@@ -23,6 +23,9 @@ export const TwitchUtil = {
       }
     });
     return map;
-  }
+  },
 
+  async delay(ms: number) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
 }

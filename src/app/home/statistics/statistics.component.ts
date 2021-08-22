@@ -4,6 +4,7 @@ import {StreamResponseDataListModel} from "../../shared/model/stream-response-da
 import {GameModel} from "../../shared/model/game.model";
 import {BehaviorSubject} from "rxjs";
 import {GameListModel} from "../../shared/model/game-list.model";
+import {TwitchUtil} from "../../shared/util/twitch.util";
 
 @Component({
   selector: 'app-statistics',
@@ -21,11 +22,8 @@ export class StatisticsComponent {
   async saveCurrentDatas() {
     this.saveCurrentDatasEmitter.emit();
     this.isSavedDataDivHidden = false;
-    await this.delay(2000);
+    await TwitchUtil.delay(2000);
     this.isSavedDataDivHidden = true;
-  }
-
-  private async delay(ms: number) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+    this.savedData = new GameListModel();
   }
 }

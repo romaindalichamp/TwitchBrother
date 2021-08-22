@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  wsTwitchBrotherBack: 'ws://localhost:8080/ws',
-  twitchBrotherDataSnapshot: 'http://localhost:8080/datasnapshot'
+  wsTwitchBrotherBack: 'wss://twitch-brother-back.herokuapp.com/ws',
+  twitchBrotherDataSnapshot: 'https://twitch-brother-back.herokuapp.com/datasnapshot'
 };
 
 /*
