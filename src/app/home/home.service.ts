@@ -7,6 +7,7 @@ import {environment} from "../../environments/environment";
   providedIn: 'root'
 })
 export class HomeService {
+  savedData: GameModel[] = [];
 
   constructor(private http: HttpClient) {
   }
@@ -20,6 +21,7 @@ export class HomeService {
   public saveGeneralInformations(gamesGeneralInfos: GameModel[]) {
     this.http.put(environment.twitchBrotherDataSnapshot, {gamesGeneralInformations: gamesGeneralInfos}, this.httpOptions)
     .toPromise().then((result) => {
+      this.savedData = <GameModel[]>result;
       console.log(result);
     })
   }

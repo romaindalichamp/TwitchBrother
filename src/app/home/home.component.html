@@ -4,6 +4,7 @@
     <div class="row">
       <h1 class="mt-4">Welcome, TwitchBrother is watching them !</h1>
       <app-statistics
+        [savedData]="savedData"
         [groupedStreams]="groupedStreams"
         [receivedStreams$]="receivedStreams$"
         [gamesGeneralInfos]="gamesGeneralInfos"

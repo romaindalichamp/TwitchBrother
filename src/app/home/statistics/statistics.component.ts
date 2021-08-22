@@ -13,6 +13,7 @@ export class StatisticsComponent {
   @Input() receivedStreams$: BehaviorSubject<StreamResponseModel> = new BehaviorSubject<StreamResponseModel>(new StreamResponseModel());
   @Input() groupedStreams: GameListModel[] = [];
   @Input() gamesGeneralInfos: GameModel[] = []
+  @Input() savedData: GameModel[] = []
   @Output() saveCurrentDatasEmitter: EventEmitter<GameModel[]> = new EventEmitter<GameModel[]>();
 
   saveCurrentDatas(){
