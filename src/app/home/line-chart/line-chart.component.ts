@@ -2,7 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {BehaviorSubject} from "rxjs";
 import {StreamResponseModel} from "../../shared/model/stream-response.model";
 import {GameModel} from "../../shared/model/game.model";
-import {GameListModel} from "../../shared/model/game-list.model";
+import {StreamResponseDataListModel} from "../../shared/model/stream-response-data-list.model";
 
 /**
  * In this component, data should be actualized, but it seems it is not working like to other bar chart
@@ -16,7 +16,7 @@ import {GameListModel} from "../../shared/model/game-list.model";
 })
 export class LineChartComponent implements OnInit {
   @Input() receivedStreams$: BehaviorSubject<StreamResponseModel> = new BehaviorSubject<StreamResponseModel>(new StreamResponseModel());
-  @Input() groupedStreams: GameListModel[] = [];
+  @Input() groupedStreams: StreamResponseDataListModel[] = [];
   @Input() gamesGeneralInfos: GameModel[] = [];
   private _counter: number = 0;
 

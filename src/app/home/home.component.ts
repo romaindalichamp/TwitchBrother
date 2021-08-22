@@ -1,13 +1,14 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Message} from "@stomp/stompjs";
 import {StreamResponseModel} from "../shared/model/stream-response.model";
 import {TwitchUtil} from "../shared/util/twitch.util";
 import {StreamResponseDataModel} from "../shared/model/stream-response-data.model";
-import {GameListModel} from "../shared/model/game-list.model";
+import {StreamResponseDataListModel} from "../shared/model/stream-response-data-list.model";
 import {BehaviorSubject, Subscription} from "rxjs";
 import {RxStompService} from "@stomp/ng2-stompjs";
 import {GameModel} from "../shared/model/game.model";
 import {HomeService} from "./home.service";
+import {GameListModel} from "../shared/model/game-list.model";
 
 @Component({
   selector: 'app-home',
@@ -18,9 +19,9 @@ import {HomeService} from "./home.service";
 export class HomeComponent implements OnInit {
   private _streamsSubscription: Subscription | undefined;
   receivedStreams$: BehaviorSubject<StreamResponseModel> = new BehaviorSubject<StreamResponseModel>(new StreamResponseModel());
-  groupedStreams: GameListModel[] = [];
+  groupedStreams: StreamResponseDataListModel[] = [];
   gamesGeneralInfos: GameModel[] = []
-  savedData: GameModel[] = [];
+  savedData: GameListModel = new GameListModel();
 
   constructor(private rxStompService: RxStompService, private homeService: HomeService) {
   }
@@ -65,7 +66,8 @@ export class HomeComponent implements OnInit {
 
   public saveCurrentDatas(): void {
     this.homeService.saveGeneralInformations(this.gamesGeneralInfos).then((result) => {
-      this.savedData = <GameModel[]>result;
+      console.log(result);
+      this.savedData = <GameListModel>result;
     });
   }
 }

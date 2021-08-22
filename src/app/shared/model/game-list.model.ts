@@ -1,7 +1,7 @@
-import {StreamResponseDataModel} from "./stream-response-data.model";
+import {GameModel} from "./game.model";
 
 export interface GameListModel {
-  key: StreamResponseDataModel[];
+  gamesGeneralInformations: GameModel[];
 }
 
 export class GameListModel implements GameListModel {

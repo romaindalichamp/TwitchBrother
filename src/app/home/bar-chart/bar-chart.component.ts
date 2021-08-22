@@ -3,7 +3,7 @@ import {BehaviorSubject} from "rxjs";
 import {StreamResponseModel} from "../../shared/model/stream-response.model";
 
 import {GameModel} from "../../shared/model/game.model";
-import {GameListModel} from "../../shared/model/game-list.model";
+import {StreamResponseDataListModel} from "../../shared/model/stream-response-data-list.model";
 
 @Component({
   selector: 'bar-chart',
@@ -12,7 +12,7 @@ import {GameListModel} from "../../shared/model/game-list.model";
 })
 export class BarChartComponent implements OnInit {
   @Input() receivedStreams$: BehaviorSubject<StreamResponseModel> = new BehaviorSubject<StreamResponseModel>(new StreamResponseModel());
-  @Input() groupedStreams: GameListModel[] = [];
+  @Input() groupedStreams: StreamResponseDataListModel[] = [];
   @Input() gamesGeneralInfos: GameModel[] = [];
 
   chartData: { name: string, value: number }[] = [];

@@ -9,8 +9,16 @@
       <h4 class="mt-4">Views for each game: </h4>
     </div>
     <div class="mt-auto col-sm text-left align-text-bottom">
-      <button class="float-sm-start btn btn-dark" type="button" value="save" (click)="saveCurrentDatas()">Save</button>
-      <span class="text-light m-lg-2">({{savedData | json}})</span>
+      <button id="buttonSave" class="float-sm-start btn btn-dark" type="button" value="save"
+              (click)="saveCurrentDatas()">Save
+      </button>
+      <div class="float-md-start" *ngIf="!isSavedDataDivHidden">
+        <ul>
+          <li class="d-inline text-success m-lg-2" style="font-size: small"
+              *ngFor="let game of savedData.gamesGeneralInformations">{{game.game_name}}
+            - {{game.viewers}}</li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
